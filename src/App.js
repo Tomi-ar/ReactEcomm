@@ -1,14 +1,15 @@
 import './App.css';
 import React from 'react';
 import {NavBar} from './components/navBar/navBar';
-import Item from './components/ItemCard/Items';
+import ItemCard from './components/ItemCard/ItemCard';
+import ItemCount from './components/ItemCard/ItemCount'
 
 function App(){
     return(
         <div>
             <NavBar/>
-            <Item nombre="IPA"/>
-            <Item nombre="Session IPA"/>
+            <ItemCard nombre="IPA"/>
+            <ItemCount max={6} cantidad={1} />
         </div>
     );
 }

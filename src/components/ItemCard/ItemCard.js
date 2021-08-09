@@ -2,8 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import ImgCerv from './../images/TiposCerveza.jpg';
 
-
-function Item ({nombre, tipo, productor, precio, id}){
+function ItemCard ({nombre, tipo, productor, precio, id}){
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={ImgCerv} />
@@ -18,4 +17,4 @@ function Item ({nombre, tipo, productor, precio, id}){
     )
 }
 
-export default Item;
+export default ItemCard;
