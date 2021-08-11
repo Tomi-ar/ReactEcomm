@@ -1,10 +1,11 @@
 import { React, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import "../estilos.css";
 
 function ItemCount({ max, cantidad }) {
     const [counter, setCounter] = useState(cantidad);
     return (
-      <div className="d-inline">
+      <div className="botones">
         <Button variant="outline-primary" onClick={() => {if (counter < max) {setCounter(counter + 1);}
           }}>+</Button>
         <p>{counter}</p>
@@ -12,6 +13,6 @@ function ItemCount({ max, cantidad }) {
           }}>-</Button>
       </div>
     );
-  }
+}
 
 export default ItemCount;
