@@ -13,8 +13,8 @@ function ItemCard ({id, nombre, tipo, productor, precio, imagenURL, max, cantida
                 <Card.Title className="cardTitulo">{nombre}</Card.Title>
                 <Card.Subtitle className="cardSubtitulo">{tipo}</Card.Subtitle>
                 <Card.Text className="cardProductor">{productor}</Card.Text>
-                <Card.Text>{precio}</Card.Text>
-                <div>
+                <Card.Text>${precio}</Card.Text>
+                <div className="contador">
                     <ItemCount max={max} cantidad={cantidad}/>
                     <p className="itemStock">Stock disponible: {max}</p>
                 </div>

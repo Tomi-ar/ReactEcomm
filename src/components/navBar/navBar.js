@@ -18,9 +18,8 @@ export const NavBar = () => {
                             />
                         </Navbar.Brand>
                         <Nav>
-                        <Nav.Link className="navLinks" href="#home">Nuestros Planes</Nav.Link>
-                        <Nav.Link className="navLinks" href="#features">Concepto BB</Nav.Link>
-                        <Nav.Link className="navLinks" href="#pricing">Estilos</Nav.Link>
+                        <Nav.Link className="navLinks" href="#home">Categorias</Nav.Link>
+                        <Nav.Link className="navLinks" href="#features">Detalles</Nav.Link>
                         <Nav.Link className="navLinks" href="#pricing">FAQ</Nav.Link>
                         </Nav>
                         <Button className="estiloCarrito" variant="link">

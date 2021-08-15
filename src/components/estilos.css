@@ -18,6 +18,7 @@
 .botones {
     display: flex;
     flex-wrap: wrap;
+    padding-left: 2rem;
 }
 
 .botones p {
@@ -27,7 +28,6 @@
 .cardTitulo {
     font-size: 24px;
     font-weight: 700;
-    text-align: left;
 }
 
 .cardSubtitulo {
@@ -41,8 +41,18 @@
     font-weight: 400;
 }
 
+.cardPrecio {
+    font-size: 15px;
+    font-weight: bold;
+    color: blue;
+}
+
+.contador_detail {
+    margin: auto 3rem;
+}
+
 .agregar {
-    margin: 1rem auto;
+    margin: 1rem 2rem;
     align-content: center;
 }
 
@@ -53,6 +63,7 @@
 .itemStock {
     font-size: 14px;
     color: grey;
+    text-align: center;
 }
 
 .tituloPpal {
@@ -67,4 +78,12 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+}
+
+.itemDetail_img img {
+    width: 100%;
+}
+
+.itemDetail_info {
+    text-align: center;
 }

@@ -4,10 +4,10 @@ import '../estilos.css';
 
 function ItemListContainer() {
     return(
-            <div >
+            <div>
                 <h1 className="tituloPpal">Lista de productos con Reactjs</h1>
                 <div className="contenedor">
-                <ItemList/>
+                <ItemList />
                 </div>
             </div>
     );
