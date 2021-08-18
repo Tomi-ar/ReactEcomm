@@ -1,48 +1,28 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import NavBar from '../navBar/navBar';
 import ItemDetail from './ItemDetail';
+import ListProducts from './productos.json'
 
-function render(item) {
-    return(
-        <ItemDetail
-        key={item.id}
-        id={item.id}
-        nombre={item.nombre}
-        tipo={item.tipo}
-        productor={item.productor}
-        precio={item.precio}
-        imagenURL={item.imagenURL}
-        max={item.max}
-        cantidad={item.cantidad}/>
-        )
-}
 
 function ItemDetailContainer() {
+    const {id} = useParams();
+
     const [items, setItems] = useState({});
 
-    const getItems = () => {
-        setItems({
-            id: 2,
-            nombre: "Kuné",
-            tipo: "Pale Ale",
-            productor: "Patagonia",
-            precio: 200,
-            imagenURL: "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
-            max: 10,
-            cantidad: 1,
-           });
+    const getItems = (ab) => {
+        const selected = ListProducts.find( (producto) => producto.id === ab)
+        setItems(selected);
     }
 
     useEffect( () => {
-        setTimeout( () => {
-            getItems();
-            render(items)
-        }, 3000)
-        }, [] 
-    );
-
+            getItems(id);
+        }
+    )
 
     return (
         <div>
+            <NavBar />
             <h1 className="tituloPpal">Detalle de producto</h1>
             <div className="contenedor">
             <ItemDetail 

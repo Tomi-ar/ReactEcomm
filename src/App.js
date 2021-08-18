@@ -1,14 +1,12 @@
 import React from 'react';
 import NavBar from './components/navBar/navBar';
 import ItemListContainer from './components/Item/ItemListContainer';
-import './App.css';
-import ItemDetailContainer from './components/Item/ItemDetailContainer';
+import './App.css'
 
 function App(){
     return(
         <div>
-            <NavBar/>
-            <ItemDetailContainer />
+            <NavBar />
             <ItemListContainer />
         </div>
     );

@@ -1,0 +1,89 @@
+[{
+        "id": "1",
+        "nombre": "Kilometro 24.7",
+        "tipo": "Session IPA",
+        "productor": "Patagonia",
+        "estilo": "Lager",
+        "precio": "150",
+        "imagenURL": "https://www.comprasparaguai.com.br/media/fotos/produtos/thumbs/big/070eadd3a319b9cd7d5842a53dad3d7a86624585.jpg",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "2",
+        "nombre": "Kuné",
+        "tipo": "Pale Ale",
+        "productor": "Patagonia",
+        "estilo": "Lager",
+        "precio": "200",
+        "imagenURL": "https://gobar.vteximg.com.br/arquivos/ids/157555-1000-1000/patagonia-kune-lata-473--2-.jpg?v=637235178939530000",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "3",
+        "nombre": "Riberão Lager",
+        "tipo": "Lager",
+        "productor": "Colorado",
+        "estilo": "Lager",
+        "precio": "310",
+        "imagenURL": "https://www.ambev.com.br/conteudo/uploads/2019/11/colorado-ribeirao_600ml.png",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "4",
+        "nombre": "Eugenia",
+        "tipo": "Session IPA",
+        "productor": "Colorado",
+        "estilo": "Lager",
+        "precio": "285",
+        "imagenURL": "https://www.ambev.com.br/conteudo/uploads/2019/03/colorado-eugenia_600ml.png",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "5",
+        "nombre": "Ithaca",
+        "tipo": "Stout",
+        "productor": "Colorado",
+        "estilo": "Lager",
+        "precio": "250",
+        "imagenURL": "https://www.ambev.com.br/conteudo/uploads/2019/03/colorado-ithaca_600ml.png",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "6",
+        "nombre": "India Pale Ale",
+        "tipo": "IPA",
+        "productor": "Antares",
+        "estilo": "Lager",
+        "precio": "275",
+        "imagenURL": "https://http2.mlstatic.com/D_NQ_NP_860605-MLA46979830852_082021-O.webp",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "7",
+        "nombre": "Fin de Tarde",
+        "tipo": "Weiss",
+        "productor": "Antares",
+        "estilo": "Lager",
+        "precio": "230",
+        "imagenURL": "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+        "max": 10,
+        "cantidad": "1"
+    },
+    {
+        "id": "8",
+        "nombre": "Playa Grande",
+        "tipo": "Lager",
+        "productor": "Antares",
+        "estilo": "Lager",
+        "precio": "320",
+        "imagenURL": "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
+        "max": 10,
+        "cantidad": "1"
+    }
+]

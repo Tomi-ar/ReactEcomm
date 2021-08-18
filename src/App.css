@@ -1,0 +1,14 @@
+.route {
+    color: rgba(255, 255, 255, .55);
+    text-decoration: none !important;
+}
+
+.estilos {
+    text-decoration: none !important;
+    color: black;
+}
+
+.activeRoute {
+    color: rgb(199, 70, 70);
+    text-decoration: none;
+}
