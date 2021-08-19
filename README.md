@@ -1,3 +1,20 @@
+# Buenas Birras e-commerce con React!
+En esta pégina podrás encontrar una selección de cervezas artesanales de las mejores cervecerías de la región!
+
+# HOME
+El home carga una lista de productos desde un .json con el catalogo, con una demora de 2 segundos para simular un tiempo de carga de datos asíncrono. 
+El navbar esta compuesto del logo del site que lleva hacia la página inicial en cualquier momento.
+Tenemos un link de Productores que agrupa cada uno de los productores disponibles hoy en el site. Cada uno lleva a la lista de productos de cada uno de ellos.
+Tenemos un link de FAQs que todavía está en construcción.
+Por úlitmo, una imagen del carrito para poder visualizar (en un futuro) los productos del mismo.
+
+# PRODUCTORES
+Cada uno de estos está hecho haciendo un filtro del listado de productos inicial, de acuerdo al nombre seleccionado (tomado usando useParams)
+
+# DETALLES DEL PRODUCTORES
+También se puede acceder al detalle de cada producto en una página nueva donde se pueden agregar (en un futuro) varios items del mismo producto al carrito!
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

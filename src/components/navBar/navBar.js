@@ -20,12 +20,15 @@ export const NavBar = () => {
                             /></NavLink>
                         </Navbar.Brand>
                         <Nav>
-                        <NavDropdown title="Estilos" id="nav-dropdown">
+                        <NavDropdown title="Productores" id="nav-dropdown">
                             <NavDropdown.Item eventKey="4.1" >
-                                <NavLink className="navLinks estilos" activeClassName="activeRoute" to="/Lagers">Lagers</NavLink>
+                                <NavLink className="navLinks estilos" activeClassName="activeRoute" to="/Patagonia">Patagonia</NavLink>
                             </NavDropdown.Item>
                             <NavDropdown.Item eventKey="4.2">
-                                <NavLink className="navLinks estilos" activeClassName="activeRoute" to="/Ales">Ales</NavLink>
+                                <NavLink className="navLinks estilos" activeClassName="activeRoute" to="/Colorado">Colorado</NavLink>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item eventKey="4.2">
+                                <NavLink className="navLinks estilos" activeClassName="activeRoute" to="/Antares">Antares</NavLink>
                             </NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link className="navLinks" href="FAQ">

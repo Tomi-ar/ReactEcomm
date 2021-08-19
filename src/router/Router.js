@@ -4,6 +4,7 @@ import FAQ from '../components/Item/FAQ'
 import App from '../App';
 import ItemDetailContainer from '../components/Item/ItemDetailContainer';
 import NotFound from '../components/Item/NotFound';
+import ProductorList from '../components/Item/ProductorList';
 
 
 const Router = () => {
@@ -11,10 +12,10 @@ const Router = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={App} />
-                <Route path="/itemDetail/:id" component={ItemDetailContainer} />
-                <Route path="/Lagers" component={App} />
-                <Route path="/Ales" component={App} />
-                <Route path="/FAQ" component={FAQ} />
+                <Route exact path="/FAQ" component={FAQ} />
+
+                <Route exact path="/itemDetail/:id" component={ItemDetailContainer} />
+                <Route exact path="/:productor" component={ProductorList} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </BrowserRouter>

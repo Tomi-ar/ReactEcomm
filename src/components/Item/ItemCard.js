@@ -1,7 +1,6 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
-import ItemCount from './ItemCount';
 import '../estilos.css'
 
 
