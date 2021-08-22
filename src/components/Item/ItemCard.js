@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import '../estilos.css'
 
 
-function ItemCard ({id, nombre, tipo, productor, precio, imagenURL, max, cantidad}){
+function ItemCard ({id, nombre, tipo, productor, precio, imagenURL}){
 
     const history = useHistory();
     const goToDetail = () => history.push(`/itemDetail/${id}`);
@@ -18,10 +18,6 @@ function ItemCard ({id, nombre, tipo, productor, precio, imagenURL, max, cantida
                 <Card.Subtitle className="cardSubtitulo">{tipo}</Card.Subtitle>
                 <Card.Text className="cardProductor">{productor}</Card.Text>
                 <Card.Text>${precio}</Card.Text>
-                {/* <div>
-                    <ItemCount max={max} cantidad={cantidad}/>
-                    <p className="itemStock">Stock disponible: {max}</p>
-                </div> */}
                 <div className="col text-center"><Button onClick={goToDetail} id={id} variant="outline-primary">Mas info</Button></div>
             </Card.Body>
             </Card>

@@ -5,6 +5,8 @@ import App from '../App';
 import ItemDetailContainer from '../components/Item/ItemDetailContainer';
 import NotFound from '../components/Item/NotFound';
 import ProductorList from '../components/Item/ProductorList';
+import Cart from '../components/Item/cart';
+
 
 
 const Router = () => {
@@ -13,7 +15,7 @@ const Router = () => {
             <Switch>
                 <Route exact path="/" component={App} />
                 <Route exact path="/FAQ" component={FAQ} />
-
+                <Route exact path="/cart" component={Cart} />
                 <Route exact path="/itemDetail/:id" component={ItemDetailContainer} />
                 <Route exact path="/:productor" component={ProductorList} />
                 <Route path="*" component={NotFound} />
