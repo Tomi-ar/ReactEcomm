@@ -17,7 +17,7 @@ function ItemDetailContainer() {
 
     useEffect( () => {
             getItems(id);
-        }, []);
+        }, [id]);
 
     return (
         <div>

@@ -1,14 +1,15 @@
-import React from 'react';
-import NavBar from './components/navBar/navBar';
-import ItemListContainer from './components/Item/ItemListContainer';
+import React from 'react'
+import { Router } from './router/Router'
 import './App.css'
+import CartProvider from './components/context/CartContext';
 
 function App(){
 
     return(
         <div>
-            <NavBar />
-            <ItemListContainer />
+            <CartProvider>
+                <Router />
+            </CartProvider>
         </div>
     );
 }
