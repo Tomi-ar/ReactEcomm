@@ -3,6 +3,7 @@ import NavBar from '../navBar/navBar';
 import ItemListContainer from './ItemListContainer';
 import '../estilos.css'
 import { useEffect } from 'react';
+import Footer from '../footer/Footer';
 
 function Home(){
 
@@ -23,6 +24,7 @@ function Home(){
                     <div>
                         <NavBar /> 
                         <ItemListContainer /> 
+                        <Footer />
                     </div> }
         </>
     );

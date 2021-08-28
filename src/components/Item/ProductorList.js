@@ -4,6 +4,7 @@ import ItemCard from './ItemCard';
 import ListProducts from './productos.json';
 import '../estilos.css';
 import NavBar from '../navBar/navBar';
+import Footer from '../footer/Footer';
 
 
 function ProductorList() {
@@ -45,6 +46,7 @@ function ProductorList() {
                         </>
                     </div>
                 </div>
+                <Footer />
             </div>
     );
 }

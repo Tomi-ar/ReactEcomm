@@ -34,10 +34,14 @@ function ItemDetail (item){
                 <p className="cardPrecio">${item.precio}</p>
                 <div className="align-self-center">
 
-                <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />
+                {(cantidadAgregar >0 && showButton) ? 
+                    <Link to="/cart" > 
+                    <Terminar q={cantidadAgregar} item={item} onAgregar={onAgregar}/> </Link> :
+                    <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />}
+                {/* <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />
                 {cantidadAgregar >0 && showButton && <Link to="/cart" > 
                 <Terminar q={cantidadAgregar} item={item} onAgregar={onAgregar}/> </Link>
-                }
+                } */}
                 </div>
             </div>
         </div>

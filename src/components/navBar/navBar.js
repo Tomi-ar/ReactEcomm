@@ -1,9 +1,10 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { Button, Container, Nav , Navbar, NavDropdown } from 'react-bootstrap';
 import Logo from '../images/Logo.png'
-import Carrito from '../images/Carrito.svg'
+import Carrito from '../images/Carrito.svg';
 import "../estilos.css"
+import CartWidget from '../Item/CartWidget';
 
 
 export const NavBar = () => {
@@ -35,15 +36,18 @@ export const NavBar = () => {
                             <NavLink className="navLinks route" activeClassName="activeRoute" to="/FAQ">FAQ</NavLink>
                         </Nav.Link>
                         </Nav>
-                        <Button className="estiloCarrito" variant="link">
-                        <img 
-                            src={Carrito} 
-                            alt="carrito" 
-                            width="60"
-                            height="60"
-                            className="border-dark carrito-img"
-                        />
-                        </Button>
+                        <Link to="/cart">
+                            <Button className="estiloCarrito" variant="link">
+                                        <img 
+                                            src={Carrito} 
+                                            alt="carrito" 
+                                            width="60"
+                                            height="60"
+                                            className="border-dark carrito-img"
+                                        />
+                            </Button>
+                            <CartWidget />          
+                        </Link>
                     </Container>
                 </Navbar>
             </div> 

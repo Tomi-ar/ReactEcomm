@@ -87,3 +87,38 @@
 .itemDetail_info {
     text-align: center;
 }
+
+#footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.redes img {
+    width: 40px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.volverInicio {
+    text-decoration: none;
+    color: rgb(4, 4, 148);
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.cartWidget {
+    text-decoration: none;
+    color: #fff;
+    background-color: red;
+    border-radius: 200px;
+    padding: 5px;
+}
