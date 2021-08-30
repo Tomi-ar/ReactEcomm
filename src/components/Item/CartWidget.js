@@ -4,10 +4,11 @@ import '../estilos.css'
 
 const CartWidget = () => {
     const { cartSize } = useContext(CartContext);
+    console.log('cartSize', cartSize());
 
     return (
         <>
-        <span className="cartWidget">{cartSize()}</span>
+        {cartSize() > 0 ? (<span className="cartWidget">{cartSize()}</span>) : ('')}
         </>
     )
 }
