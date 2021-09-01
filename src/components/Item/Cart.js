@@ -5,6 +5,7 @@ import { CartContext } from "../context/CartContext";
 import Footer from "../footer/Footer";
 import NavBar from "../navBar/navBar";
 import '../estilos.css'
+import { getFirestore } from "firebase/firestore";
 
 const Cart = () => {
     const {items, removeItem, clearAll, cartSize, onIncrease, onDecrease} = useContext(CartContext);
@@ -14,6 +15,49 @@ const Cart = () => {
     const subtotal = items.reduce((a,b) => a + b.item.precio*b.q, 0);
     const descuentos = 0;
     const total = subtotal - descuentos;
+
+
+    // const handleFinishPurchase = () => {
+    //     const newOrder = {
+    //         buyer: {
+    //             name: "Tomas",
+    //             phone: "212315612",
+    //             email: "tomas@tomas.com"
+    //         },
+    //         items: items.map(({item, quantity}) => ({
+    //             item: {
+    //             item.id,
+    //             item.title,
+    //             item.price,
+    //         },
+    //             quantity: 
+    //         })),
+    //         total,
+    //     };
+    //     const db = getFirestore();
+    //     const orders = db.collection("orders");
+    //     const docRef = db.collection('items').doc(items.[0].item.id)
+    //     orders.add(newOrder).then((resopnse) => {
+    //         console.log(response);
+    //         docRef.update({
+    //            stock: items[0].item.stock - items[0].quantity; SE TENDRIA QUE HACER EN EL MOMENTO QUE SE CREA LA OTRA INFORMACION
+    // })
+    //     }).catch((error) => console.log(error)); 
+    //     }
+    // }
+                // LA OTRA FORMA
+                // const batch = db.batch(),
+    //     orders.add(newOrder).then((resopnse) => {
+    //         console.log(response);
+    //         items.forEach(({item, quantity}) => {
+    //         const docRef = db.collection('items').doc(item.id)
+    //         batch.update(docRef, {stock: item.stock - quantity})
+    //         });
+    //         batch.commit();
+    //     }).catch((error) => console.log(error)); 
+    //     }
+    // }
+
 
     return(
         <div>

@@ -45,7 +45,7 @@ function ItemDetail (item){
                 </div>
             </div>
         </div>
-    );
+    )
 }
 
 export default ItemDetail;

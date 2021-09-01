@@ -12,7 +12,7 @@ function ItemListContainer() {
                     </div>
                 </div>
             </div>
-    );
+    )
 }
 
 export default ItemListContainer;

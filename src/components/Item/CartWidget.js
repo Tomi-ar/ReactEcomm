@@ -4,7 +4,7 @@ import '../estilos.css'
 
 const CartWidget = () => {
     const { cartSize } = useContext(CartContext);
-    console.log('cartSize', cartSize());
+    // console.log('cartSize', cartSize());
 
     return (
         <>
