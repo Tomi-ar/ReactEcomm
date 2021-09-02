@@ -13,16 +13,17 @@ function ProductorList() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const db = getFirestore();
-    const itemCollection = db.collection("Items");
-    const crafter = itemCollection.where("productor", "==", productor);
-
     // const getItems = (ab) => {
     //     const selected = ListProducts.filter( (beer) => beer.productor === ab)
     //     setItems(selected);
     // }
 
     useEffect( () => {
+
+        const db = getFirestore();
+        const itemCollection = db.collection("Items");
+        const crafter = itemCollection.where("productor", "==", productor);
+    
             // getItems(productor);
         setLoading(true);
         crafter.get().then((querySnapshot) => {
@@ -36,14 +37,14 @@ function ProductorList() {
                 }))
             );
         })
-        // .then(() => setLoading(false))
         .catch((error) => console.log('error', error))
         .finally(() => setLoading(false));
-    }, [crafter]);
+    }, [productor]);
     
     return(
             <div>
                 <NavBar />
+                {loading && <h2>Loading...</h2>}
                 <h1 className="tituloPpal">Lista de productos de cervecería {productor}</h1>
                 <div className="container">
                     <div className="row">

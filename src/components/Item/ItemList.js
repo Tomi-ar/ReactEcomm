@@ -6,17 +6,12 @@ import ItemCard from './ItemCard';
 //puede definir el itemId aqui de ejemplo, usarlo desde useparams
 // const itemID = '1234'
 
-
 function ItemList (){
 
     const [items, setItems] = useState([]);
-    const [item, setItem] = useState(null);
-    const [itemHighPrice, setItemHighPrice] = useState([]);
     const [loading, setLoading] = useState(false)
     console.log('items', items)
-
-    // const highPrice = itemCollection.where("price", ">", 1234)
-    //highprice puede ser qqlr cosa, tipo catId
+    // const [item, setItem] = useState(null);
 
     // useEffect(
     //     () => {
