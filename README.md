@@ -1,5 +1,17 @@
 # Buenas Birras e-commerce con React!
-En esta pégina podrás encontrar una selección de cervezas artesanales de las mejores cervecerías de la región!
+En esta página podrás encontrar una selección de cervezas artesanales de las mejores cervecerías de la región!
+
+# BUILD WITH
+
+    ReactJS
+    JavaScript
+    Node
+    NPM
+    Webpack
+    HTML
+    CSS
+    BOOTSTRAP
+
 
 # HOME
 El home carga una lista de productos desde un .json con el catalogo, con una demora de 2 segundos para simular un tiempo de carga de datos asíncrono. 

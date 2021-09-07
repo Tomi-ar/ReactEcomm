@@ -16,26 +16,28 @@ const Cart = () => {
     const descuentos = 0;
     const total = subtotal - descuentos;
 
+    // const history = useHistory();
+    // const saveHistory = (id) => history.push(`/thankyou/${id}`);
 
-    // const handleFinishPurchase = () => {
-    //     const newOrder = {
-    //         buyer: {
-    //             name: "Tomas",
-    //             phone: "212315612",
-    //             email: "tomas@tomas.com"
-    //         },
-    //         items: items.map(({item, quantity}) => ({
-    //             item: {
-    //             item.id,
-    //             item.title,
-    //             item.price,
-    //         },
-    //             quantity: 
-    //         })),
-    //         total,
-    //     };
-    //     const db = getFirestore();
-    //     const orders = db.collection("orders");
+    const handleFinishPurchase = (e) => {
+        e.preventDefault();
+        const newOrder = {
+            buyer: {
+                name: "Tomas",
+                phone: "212315612",
+                email: "tomas@tomas.com"
+            },
+            items: items.map(({item, q}) => ({
+                item: {
+                id: item.id,
+                title: item.nombre,
+                precio: item.precio,
+            },
+                q: q
+            })),
+            // date: firebase.firestore.Timestamp.fromDate(new Date()),
+            total: total,
+        };
     //     const docRef = db.collection('items').doc(items.[0].item.id)
     //     orders.add(newOrder).then((resopnse) => {
     //         console.log(response);
@@ -45,18 +47,23 @@ const Cart = () => {
     //     }).catch((error) => console.log(error)); 
     //     }
     // }
-                // LA OTRA FORMA
-                // const batch = db.batch(),
-    //     orders.add(newOrder).then((resopnse) => {
-    //         console.log(response);
-    //         items.forEach(({item, quantity}) => {
-    //         const docRef = db.collection('items').doc(item.id)
-    //         batch.update(docRef, {stock: item.stock - quantity})
-    //         });
-    //         batch.commit();
-    //     }).catch((error) => console.log(error)); 
-    //     }
-    // }
+    //             LA OTRA FORMA        
+        const db = getFirestore();
+        const orders = db.collection("orders");
+        const batch = db.batch();
+        
+        orders.add(newOrder).then((response) => {
+            console.log(response);
+            items.forEach(({item, q}) => {
+            const docRef = db.collection('items').doc(item.id)
+            batch.update(docRef, {stock: item.max - q})
+            });
+            batch.commit();
+            // saveHistory(response.id)
+        })
+        // .then(clear())
+        .catch((error) => console.log(error)); 
+    }
 
 
     return(
@@ -132,7 +139,7 @@ const Cart = () => {
                                 <p>${total}</p>
                             </div>
                             <div className="botones my-3">
-                                <button>Terminar Compra</button>
+                                <button type="submit" to="/thankyou" onClick={handleFinishPurchase}>Terminar Compra</button>
                                 <Link to="/" >Seguir comprando</Link>
                             </div>
 
