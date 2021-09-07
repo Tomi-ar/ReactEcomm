@@ -38,6 +38,7 @@ const Cart = () => {
             // date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: total,
         };
+        console.log(newOrder);
     //     const docRef = db.collection('items').doc(items.[0].item.id)
     //     orders.add(newOrder).then((resopnse) => {
     //         console.log(response);
@@ -51,7 +52,7 @@ const Cart = () => {
         const db = getFirestore();
         const orders = db.collection("orders");
         const batch = db.batch();
-        
+
         orders.add(newOrder).then((response) => {
             console.log(response);
             items.forEach(({item, q}) => {
@@ -62,7 +63,7 @@ const Cart = () => {
             // saveHistory(response.id)
         })
         // .then(clear())
-        .catch((error) => console.log(error)); 
+        .catch((error) => console.log('error', error)); 
     }
 
 
@@ -139,7 +140,7 @@ const Cart = () => {
                                 <p>${total}</p>
                             </div>
                             <div className="botones my-3">
-                                <button type="submit" to="/thankyou" onClick={handleFinishPurchase}>Terminar Compra</button>
+                                <button type="submit" onClick={handleFinishPurchase}>Terminar Compra</button>
                                 <Link to="/" >Seguir comprando</Link>
                             </div>
 
