@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 import { Button, Container, Nav , Navbar, NavDropdown } from 'react-bootstrap';
 import Logo from '../images/Logo.png'
 import Carrito from '../images/Carrito.svg';
-import "../estilos.css"
+import "../estilos.scss"
 import CartWidget from '../Item/CartWidget';
 
 

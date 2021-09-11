@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import "../estilos.css";
+import "../estilos.scss";
 
 function ItemCount({ max, cantidad, onAdd, id}) {
     const [counter, setCounter] = useState(0);
@@ -12,7 +12,8 @@ function ItemCount({ max, cantidad, onAdd, id}) {
           <p>{counter}</p>
           <Button variant="outline-primary" onClick={() => {if (counter < max) {setCounter(counter + 1);}
             }}>+</Button>
-        </div>  
+        </div>
+        <p className="itemStock">Disponibles: {max}</p>  
         <Button id={id} className="agregar" variant="warning" onClick= {() => onAdd(counter)}>+ Agregar</Button>
       </div>
     );

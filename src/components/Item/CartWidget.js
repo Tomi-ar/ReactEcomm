@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
-import '../estilos.css'
+import '../estilos.scss'
 
 const CartWidget = () => {
     const { cartSize } = useContext(CartContext);
-    // console.log('cartSize', cartSize());
 
     return (
         <>

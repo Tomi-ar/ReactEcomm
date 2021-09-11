@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from '../navBar/navBar';
 import ItemListContainer from './ItemListContainer';
-import '../estilos.css'
+import '../estilos.scss'
 import { useEffect } from 'react';
 import Footer from '../footer/Footer';
 

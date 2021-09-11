@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import ItemCount from './ItemCount';
-import '../estilos.css'
+import '../estilos.scss'
 import { Link } from 'react-router-dom';
 import { Terminar } from './Terminar';
 import { CartContext } from '../context/CartContext';
@@ -23,20 +23,24 @@ function ItemDetail (item){
     }
 
     return (
-        <div className="row itemDetail align-middle">
-            <div className="col-6 itemDetail_img">
+        <div className="row itemDetail my-3">
+            <div className="col-6 itemDetail_img h-85">
                 <img src={item.imagenURL} alt="Imagen producto" />
             </div>
-            <div className="col-6 itemDetail_info my-auto">
-                <h3 className="cardTitulo">{item.nombre}</h3>
-                <h4 className="cardSubtitulo">{item.tipo}</h4>
-                <p className="cardProductor">{item.productor}</p>
-                <p className="cardPrecio">${item.precio}</p>
+            <div className="col-6 itemDetail_info h-85 my-auto">
+                <h3 className="cardTitle">{item.nombre}</h3>
+                <h4 className="cardProductor">{item.productor}</h4>
+                <p className="cardDescripcion">{item.descripcion}</p>
+                <p className="cardEstilo">{item.estilo}</p>
+                <p className="cardPrice">${item.precio}</p>
                 <div className="align-self-center">
 
                 {(cantidadAgregar >0 && showButton) ? 
-                    <Link to="/cart" > 
-                    <Terminar q={cantidadAgregar} item={item} onAgregar={onAgregar}/> </Link> :
+                    <>
+                    <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />
+                    <Link to="/cart" className="text-decoration-none"> 
+                    <Terminar q={cantidadAgregar} item={item} onAgregar={onAgregar}/> </Link> 
+                    </> :
                     <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />}
                 {/* <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />
                 {cantidadAgregar >0 && showButton && <Link to="/cart" > 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemCard from './ItemCard';
-import '../estilos.css';
+import '../estilos.scss';
 import NavBar from '../navBar/navBar';
 import Footer from '../footer/Footer';
 import { getFirestore } from "../firebase";
@@ -45,8 +45,8 @@ function ProductorList() {
             <div>
                 <NavBar />
                 {loading && <h2>Loading...</h2>}
-                <h1 className="tituloPpal">Lista de productos de cervecería {productor}</h1>
-                <div className="container">
+                <h1 className="titlePpal">Lista de productos de cervecería {productor}</h1>
+                <div className="container altMin">
                     <div className="row">
                         <> 
                         {items.map((item) => (

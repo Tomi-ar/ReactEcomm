@@ -24,9 +24,9 @@ const Footer = () => {
                 </div>
                 <div className="col-12 col-sm-4 my-3 my-sm-auto mx-auto">
                     <ul className="my-auto">
-                        <li><a href="Mercado_BB.html#header">Volver arriba</a></li>
-                        <li><a href="WIP.html">Términos y condiciones</a></li>
-                        <li><a href="WIP.html">Uso de cookies y política de privacidad</a></li>
+                        <li><Link to="/">Volver al inicio</Link></li>
+                        <li><Link to="/FAQ">Términos y condiciones</Link></li>
+                        <li><Link to="/FAQ">Uso de cookies y política de privacidad</Link></li>
                     </ul>
                 </div>
                 <div className="col-12 col-sm-4 my-auto logo mx-auto">

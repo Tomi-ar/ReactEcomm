@@ -1,12 +1,12 @@
 import React from 'react';
 import ItemList from './ItemList';
-import '../estilos.css';
+import '../estilos.scss';
 
 function ItemListContainer() {
     return(
             <div>
-                <h1 className="tituloPpal">Lista de productos con Reactjs</h1>
-                <div className="container">
+                <h1 className="titlePpal">Lista de productos con Reactjs</h1>
+                <div className="container altMin">
                     <div className="row">
                         <ItemList />
                     </div>

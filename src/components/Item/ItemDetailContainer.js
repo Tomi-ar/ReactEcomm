@@ -4,6 +4,7 @@ import Footer from '../footer/Footer';
 import NavBar from '../navBar/navBar';
 import ItemDetail from './ItemDetail';
 import { getFirestore } from "../firebase";
+import '../estilos.scss';
 // import ListProducts from './productos.json'
 
 
@@ -39,19 +40,21 @@ function ItemDetailContainer() {
     return (
         <div>
             <NavBar />
-            <h1 className="tituloPpal">Detalle de producto</h1>
+            <h1 className="titlePpal">Detalle de producto</h1>
             {loading && <h2>Loading...</h2>}
-            <div className="contenedor">
+            <div className="container">
             <ItemDetail 
                 key={items.id}
                 id={items.id}
                 nombre={items.nombre}
+                descripcion={items.descripcion}
+                estilo={items.estilo}
                 tipo={items.tipo}
                 productor={items.productor}
                 precio={items.precio}
                 imagenURL={items.imagenURL}
                 max={items.max}
-                cantidad={items.cantidad}/>
+                cantidadMin={items.cantidadMin}/>
             </div>
             <Footer />
         </div>

@@ -9,6 +9,5 @@
 }
 
 .activeRoute {
-    color: rgb(199, 70, 70);
-    text-decoration: none;
+    font-weight: bold;
 }

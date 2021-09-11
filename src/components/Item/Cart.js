@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import Footer from "../footer/Footer";
 import NavBar from "../navBar/navBar";
-import '../estilos.css'
+import '../estilos.scss';
 import { getFirestore } from "firebase/firestore";
 
 const Cart = () => {
@@ -73,36 +73,37 @@ const Cart = () => {
             <div className="container my-5">
                 <div className="row ">
                     <div className="col-7">
-                        <h3>Mi carrito</h3>
+                        <h3 className="cart-title">Mi carrito</h3>
                         <div className="product-item border">
                             {cartSize(items) > 0 ? (
                                 items.map((prod) => ( 
                                 <>
-                                <div key={prod.id} className="border rounded mx-1 my-3">
-                                    <div className="product-item-details">
-                                        <div className="row product-details-flex">
-                                            <div className="col-1 offset-1 product-details__img">
-                                                <img src={prod.item.imagenURL} alt="foto del prod" width="60" />
+                                <div key={prod.id} className="border product-item-details mx-1 my-3">
+                                    <div>
+                                        <div className="row pt-2">
+                                            <div className="col-1 offset-1 product-details__img text-center">
+                                                <img src={prod.item.imagenURL} alt="foto del prod" className="ml-0 d-block" />
                                             </div>
-                                            <div className="col-6 product-details__info">
+                                            <div className="col-6">
                                                 <h4>{prod.item.nombre}</h4>
-                                                <p>{prod.item.productor}</p>
+                                                <p className="detail-subt">{prod.item.productor}</p>
                                             </div>
-                                            <div className="col-2 offset-2">
-                                                <button id="carrito" type="button" class="btn btn-light carrito rounded-circle">
-                                                    <img onClick={()=> removeItem(prod.item.id)} src="https://assets.webiconspng.com/uploads/2017/01/Red-Trash-Simple-Icon.png" alt="eliminar" class="rounded-pill border border-dark carrito-img" width="30"/>
+                                            <div className="col-2 offset-1 text-center">
+                                                <button id="carrito" type="button" className="btn btn-light rounded-circle">
+                                                    <img onClick={()=> removeItem(prod.item.id)} src="https://assets.webiconspng.com/uploads/2017/01/Red-Trash-Simple-Icon.png" alt="eliminar" className="rounded-pill border border-dark" width="30"/>
                                                 </button>
+                                                <p className="remove-prod">Remover</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row product-item-control">
-                                        <div className="col-8 product-item__qty botones">
-                                            <p>Unidades</p>
-                                            <button onClick={() => onDecrease(prod.item.id)} type="button" class="btn btn-outline-secondary">-</button>
+                                    <div className="row p-2">
+                                        <div className="col-8 botones">
+                                            <p className="detail-subt">Unidades</p>
+                                            <button onClick={() => onDecrease(prod.item.id)} type="button" className="btn btn-outline-secondary">-</button>
                                             <p>{prod.q}</p>
-                                            <button onClick={() => onIncrease(prod.item.id)} type="button" class="btn btn-outline-secondary">+</button>
+                                            <button onClick={() => onIncrease(prod.item.id)} type="button" className="btn btn-outline-secondary">+</button>
                                         </div>
-                                        <div className="col-4 product-item__total text-center">
+                                        <div className="col-4 text-center">
                                             <p className="product-item__subtotal">Subtotal: ${prod.q*prod.item.precio}</p>
                                         </div>
                                     </div>
@@ -110,14 +111,15 @@ const Cart = () => {
                                 </> ))
                             ) : (
                                 <>
-                                <div className="pt-3">
+                                <div className="p-3">
                                     <Link to="/" className="volverInicio">No hay productos, comienza a comprar!</Link> 
                                 </div>
                                 </>
                             )}
                             {cartSize(items) > 0 ? (<>
                                 <div className="row">
-                                    <button onClick={() => clearAll()} className="col-4 offset-4 btn btn-outline-secondary">Vaciar carrito</button>
+                                    <button className="col-6 offset-3 agregarMas"><Link className="boton_link" to="/" >Seguir comprando</Link></button>
+                                    <button onClick={() => clearAll()} className="col-4 offset-4 btn vaciarCart">Vaciar carrito</button>
                                 </div> 
                                 </>) : (<> </>)
                             }
@@ -125,23 +127,22 @@ const Cart = () => {
                     </div>
 
                     <div className="col-4 offset-1 cart-summary">
-                    <h3>Resumen de compra</h3>
+                    <h3 className="cart-title">Resumen de compra</h3>
                         <div className="border">
-                            <div className="border-bottom my-auto">
-                                <p className="py-3">Subtotal:</p>
-                                <p>${subtotal}</p>
+                            <div className="cart-summary_style">
+                                <p className="cart-summary_concept">Subtotal:</p>
+                                <p className="cart-summary_value">${subtotal}</p>
                             </div>
-                            <div className="border-bottom my-auto">
-                                <p className="py-3">Descuentos</p>
-                                <p>$0</p>
+                            <div className="cart-summary_style">
+                                <p className="cart-summary_concept">Descuentos</p>
+                                <p className="cart-summary_value">$0</p>
                             </div>
-                            <div className="border-bottom my-auto">
-                                <p className="py-3">Total</p>
-                                <p>${total}</p>
+                            <div className="cart-summary_style">
+                                <p className="cart-summary_concept">Total</p>
+                                <p className="cart-summary_value">${total}</p>
                             </div>
-                            <div className="botones my-3">
-                                <button type="submit" onClick={handleFinishPurchase}>Terminar Compra</button>
-                                <Link to="/" >Seguir comprando</Link>
+                            <div className="my-3">
+                                <button type="submit" className="col-6 offset-3 cart-summary_finish" onClick={handleFinishPurchase}>Terminar Compra</button>
                             </div>
 
                         </div>
