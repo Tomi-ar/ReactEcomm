@@ -6,6 +6,8 @@ import ItemDetailContainer from '../components/Item/ItemDetailContainer';
 import NotFound from '../components/Item/NotFound';
 import ProductorList from '../components/Item/ProductorList';
 import Cart from '../components/Item/Cart';
+import Checkout from '../components/Item/Checkout';
+import { Thankyou } from '../components/Item/Thakyou';
 
 
 
@@ -16,6 +18,8 @@ export const Router = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/FAQ" component={FAQ} />
                 <Route exact path="/cart" component={Cart} />
+                <Route exact path="/checkout" component={Checkout} />
+                <Route exact path="/thankyou/:id" component={Thankyou} />
                 <Route exact path="/itemDetail/:id" component={ItemDetailContainer} />
                 <Route exact path="/:productor" component={ProductorList} />
                 <Route path="*" component={NotFound} />

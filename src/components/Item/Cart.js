@@ -5,7 +5,6 @@ import { CartContext } from "../context/CartContext";
 import Footer from "../footer/Footer";
 import NavBar from "../navBar/navBar";
 import '../estilos.scss';
-import { getFirestore } from "firebase/firestore";
 
 const Cart = () => {
     const {items, removeItem, clearAll, cartSize, onIncrease, onDecrease} = useContext(CartContext);
@@ -19,26 +18,9 @@ const Cart = () => {
     // const history = useHistory();
     // const saveHistory = (id) => history.push(`/thankyou/${id}`);
 
-    const handleFinishPurchase = (e) => {
-        e.preventDefault();
-        const newOrder = {
-            buyer: {
-                name: "Tomas",
-                phone: "212315612",
-                email: "tomas@tomas.com"
-            },
-            items: items.map(({item, q}) => ({
-                item: {
-                id: item.id,
-                title: item.nombre,
-                precio: item.precio,
-            },
-                q: q
-            })),
-            // date: firebase.firestore.Timestamp.fromDate(new Date()),
-            total: total,
-        };
-        console.log(newOrder);
+    // const handleFinishPurchase = (e) => {
+
+        // UNA FORMA GENERAL
     //     const docRef = db.collection('items').doc(items.[0].item.id)
     //     orders.add(newOrder).then((resopnse) => {
     //         console.log(response);
@@ -49,22 +31,22 @@ const Cart = () => {
     //     }
     // }
     //             LA OTRA FORMA        
-        const db = getFirestore();
-        const orders = db.collection("orders");
-        const batch = db.batch();
+        // const db = getFirestore();
+        // const orders = db.collection("orders");
+        // const batch = db.batch();
 
-        orders.add(newOrder).then((response) => {
-            console.log(response);
-            items.forEach(({item, q}) => {
-            const docRef = db.collection('items').doc(item.id)
-            batch.update(docRef, {stock: item.max - q})
-            });
-            batch.commit();
-            // saveHistory(response.id)
-        })
+        // orders.add(newOrder).then((response) => {
+        //     console.log(response);
+        //     items.forEach(({item, q}) => {
+        //     const docRef = db.collection('items').doc(item.id)
+        //     batch.update(docRef, {stock: item.max - q})
+        //     });
+        //     batch.commit();
+        //     saveHistory(response.id);
+        // })
         // .then(clear())
-        .catch((error) => console.log('error', error)); 
-    }
+        // .catch((error) => console.log('error', error)); 
+    // }
 
 
     return(
@@ -142,7 +124,7 @@ const Cart = () => {
                                 <p className="cart-summary_value">${total}</p>
                             </div>
                             <div className="my-3">
-                                <button type="submit" className="col-6 offset-3 cart-summary_finish" onClick={handleFinishPurchase}>Terminar Compra</button>
+                                <Link to="/checkout" className="col-6 offset-3 cart-summary_finish">Terminar Compra</Link>
                             </div>
 
                         </div>

@@ -58,8 +58,10 @@
 .itemDetail {
     .itemDetail_img {
         img {
-            height: 100%;
-            width: auto;
+            display: block;
+            max-width: 250px;
+            object-fit: contain;
+            margin: auto;
         }
     }
     .itemDetail_info {
@@ -99,11 +101,13 @@
     color: rgb(66, 87, 117);
 }
 
-#footer a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 200;
+#footer {
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 200;
+    }
     ul {
         list-style: none;
         padding: 0;
@@ -207,5 +211,32 @@
         font-weight: bold;
         border-radius: 5px;
         padding: 0.5rem;
+        text-decoration: none;
+    }
+}
+
+.formulario {
+    background-color: rgb(66, 87, 117);
+    padding: 1rem;
+    color: white;
+    font-weight: bold;
+    .medioPago {
+        font-weight: normal;
+        margin-top: 1rem;
+    }
+}
+
+.volverHome {
+    background-color: transparent;
+    color: #39acdf;
+    border: solid 1px #39acdf;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+p {
+    span {
+        font-weight: bold;
     }
 }

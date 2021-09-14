@@ -51,7 +51,7 @@ export const CartProvider = ({ children }) => {
     const clearAll = () => setItems([])
 
     useEffect(() => {
-        console.log('items', items)
+        // console.log('items', items)
     }, [items])
 
     return (
