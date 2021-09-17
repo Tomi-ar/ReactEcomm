@@ -5,18 +5,65 @@ import { CartContext } from "../context/CartContext";
 import Footer from "../footer/Footer";
 import NavBar from "../navBar/navBar";
 import '../estilos.scss';
+import Swal from "sweetalert2";
+import CurrencyFormat from "react-currency-format";
+
 
 const Cart = () => {
     const {items, removeItem, clearAll, cartSize, onIncrease, onDecrease} = useContext(CartContext);
+    const subtotal = items.reduce((a,b) => a + b.item.precio*b.q, 0);
+    const descuentos = items.filter(({q}) => q >= 6).reduce((a, b) => a + b.item.precio*0.15*b.q, 0);
+    const total = subtotal - descuentos;
+    
+    // PARA REMOVER MAS TARDE
     console.log('items', items);
     console.log('cantidad', cartSize(items))
+    console.log('descuento', descuentos);
 
-    const subtotal = items.reduce((a,b) => a + b.item.precio*b.q, 0);
-    const descuentos = 0;
-    const total = subtotal - descuentos;
+    const VaciarCarrito = () =>{
+        Swal.fire({
+            title: "Atención! Esta acción eliminará todos los productos de tu carrito",
+            text: "Si aceptas, eliminarás todos los productos",
+            icon: "warning",
+            showCancelButton: true,
+            cancelButtonColor: "#d33",
+            dangerMode: true,
+            confirmButtonText: "Si, vaciar!"
+        })
+        .then((borrarTodo) => {
+            if (borrarTodo.isConfirmed) {
+                clearAll()
+                Swal.fire({
+                    text: "Se han eliminado todos los productos!",
+                    icon: "success",
+                })
+            } else {
+                Swal.fire({text: "Tus productos están a salvo!", icon: "info"})
+            }
+        })
+    }
 
-    // const history = useHistory();
-    // const saveHistory = (id) => history.push(`/thankyou/${id}`);
+    const vaciarItem = (id) =>{
+        Swal.fire({
+            title: "Quieres borrar este ítem del carrito?",
+            icon: "warning",
+            showCancelButton: true,
+            cancelButtonColor: "#d33",
+            dangerMode: true,
+            confirmButtonText: "Si, eliminar!"
+        })
+        .then((borrarProd) => {
+            if (borrarProd.isConfirmed) {
+                removeItem(id)
+                Swal.fire({
+                    text: "Se ha eliminado el ítem!",
+                    icon: "success",
+                })
+            } else {
+                Swal.fire({text: "Se ha cancelado la acción.", icon: "info"})
+            }
+        })
+    }
 
     // const handleFinishPurchase = (e) => {
 
@@ -30,24 +77,6 @@ const Cart = () => {
     //     }).catch((error) => console.log(error)); 
     //     }
     // }
-    //             LA OTRA FORMA        
-        // const db = getFirestore();
-        // const orders = db.collection("orders");
-        // const batch = db.batch();
-
-        // orders.add(newOrder).then((response) => {
-        //     console.log(response);
-        //     items.forEach(({item, q}) => {
-        //     const docRef = db.collection('items').doc(item.id)
-        //     batch.update(docRef, {stock: item.max - q})
-        //     });
-        //     batch.commit();
-        //     saveHistory(response.id);
-        // })
-        // .then(clear())
-        // .catch((error) => console.log('error', error)); 
-    // }
-
 
     return(
         <div>
@@ -72,7 +101,7 @@ const Cart = () => {
                                             </div>
                                             <div className="col-2 offset-1 text-center">
                                                 <button id="carrito" type="button" className="btn btn-light rounded-circle">
-                                                    <img onClick={()=> removeItem(prod.item.id)} src="https://assets.webiconspng.com/uploads/2017/01/Red-Trash-Simple-Icon.png" alt="eliminar" className="rounded-pill border border-dark" width="30"/>
+                                                    <img onClick={()=> vaciarItem(prod.item.id)} src="https://assets.webiconspng.com/uploads/2017/01/Red-Trash-Simple-Icon.png" alt="eliminar" className="rounded-pill border border-dark" width="30"/>
                                                 </button>
                                                 <p className="remove-prod">Remover</p>
                                             </div>
@@ -101,7 +130,7 @@ const Cart = () => {
                             {cartSize(items) > 0 ? (<>
                                 <div className="row">
                                     <button className="col-6 offset-3 agregarMas"><Link className="boton_link" to="/" >Seguir comprando</Link></button>
-                                    <button onClick={() => clearAll()} className="col-4 offset-4 btn vaciarCart">Vaciar carrito</button>
+                                    <button onClick={() => VaciarCarrito()} className="col-4 offset-4 btn vaciarCart">Vaciar carrito</button>
                                 </div> 
                                 </>) : (<> </>)
                             }
@@ -113,16 +142,21 @@ const Cart = () => {
                         <div className="border">
                             <div className="cart-summary_style">
                                 <p className="cart-summary_concept">Subtotal:</p>
-                                <p className="cart-summary_value">${subtotal}</p>
+                                <p className="cart-summary_value"><CurrencyFormat value={subtotal} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} fixedDecimalScale={true}/></p>
                             </div>
                             <div className="cart-summary_style">
                                 <p className="cart-summary_concept">Descuentos</p>
-                                <p className="cart-summary_value">$0</p>
+                                <p className="cart-summary_valueDesc">(-<CurrencyFormat value={descuentos} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} fixedDecimalScale={true}/>)</p>
                             </div>
                             <div className="cart-summary_style">
                                 <p className="cart-summary_concept">Total</p>
-                                <p className="cart-summary_value">${total}</p>
+                                <p className="cart-summary_value"><CurrencyFormat value={total} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} fixedDecimalScale={true}/></p>
                             </div>
+                            {descuentos > 0 ? (<>
+                                <div className="cart-summary_style">
+                                    <p className="cart-summary_discount">Genial! Has accedido a un descuento del 15% sobre algunos productos!</p>
+                                </div>
+                             </>) : (<> </>)}
                             <div className="my-3">
                                 <Link to="/checkout" className="col-6 offset-3 cart-summary_finish">Terminar Compra</Link>
                             </div>

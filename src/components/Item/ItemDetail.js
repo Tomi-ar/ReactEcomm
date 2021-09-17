@@ -4,7 +4,7 @@ import '../estilos.scss'
 import { Link } from 'react-router-dom';
 import { Terminar } from './Terminar';
 import { CartContext } from '../context/CartContext';
-// import swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 
 function ItemDetail (item){
@@ -20,24 +20,14 @@ function ItemDetail (item){
     }
 
     const onAgregar = (item, a) => {
-        // swal({
-        //     title: "Are you sure?",
-        //     text: "Once deleted, you will not be able to recover this imaginary file!",
-        //     icon: "warning",
-        //     buttons: true,
-        //     dangerMode: true,
-        //   })
-        //   .then((willDelete) => {
-        //     if (willDelete) {
-        //       swal("Poof! Your imaginary file has been deleted!", {
-        //         icon: "success",
-        //       });
-        //     } else {
-        //       swal("Your imaginary file is safe!");
-        //     }
-        //   })
-        //   .then(() => addItem(item, a))
-        // ;
+        Swal.fire({
+            title: `Has agregado ${a} item(s) al carrito `,
+            text: `Producto: ${item.nombre}`,
+            icon: 'success',
+            width: 500,
+            padding: '2em',
+          })
+        
         addItem(item, a);
     }
 

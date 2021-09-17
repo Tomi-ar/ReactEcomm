@@ -4,7 +4,7 @@ import { useState } from "react";
 export const CartContext = React.createContext([]);
 
 export const CartProvider = ({ children }) => {
-    const [items, setItems] = useState([])
+    const [items, setItems] = useState([]);
 
     const inCart = (id) => {
         const resultado = items.find(obj => obj.item.id === id) !== undefined ? true : false;
@@ -48,7 +48,9 @@ export const CartProvider = ({ children }) => {
         setItems(newItems)
     }
 
-    const clearAll = () => setItems([])
+    const clearAll = () => {
+        setItems([])
+    }
 
     useEffect(() => {
         // console.log('items', items)

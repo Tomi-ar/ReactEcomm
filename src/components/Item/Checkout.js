@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
-import { Link , useHistory} from "react-router-dom";
+import { useHistory} from "react-router-dom";
 import '../estilos.scss';
 import Footer from "../footer/Footer";
 import NavBar from "../navBar/navBar";
@@ -60,6 +60,7 @@ const Checkout = () => {
             });
             batch.commit();
             saveHistory(response.id);
+            // swall success con timer de procesamiento de la orden
         })
         .catch((error) => console.log('error', error));
         
@@ -80,7 +81,7 @@ const Checkout = () => {
                                     <input 
                                         type="text" 
                                         className="form-control" 
-                                        placeholder="Insertar Nombre" 
+                                        placeholder="Ingresa tú Nombre" 
                                         name="nombre" 
                                         id="nombre" 
                                         value={formData.nombre}
@@ -92,7 +93,7 @@ const Checkout = () => {
                                     <input 
                                         type="apellido" 
                                         className="form-control" 
-                                        placeholder="Insertar Apellido" 
+                                        placeholder="Ingresa tú Apellido" 
                                         name="apellido" 
                                         id="apellido" 
                                         value={formData.apellido}
@@ -105,7 +106,7 @@ const Checkout = () => {
                                         type="email" 
                                         name="email" 
                                         id="email" 
-                                        placeholder="Insertar Correo Electronico" 
+                                        placeholder="Ingresa tú correo electronico" 
                                         className="form-control" 
                                         value={formData.email}
                                         onChange={handleChangeInput}
@@ -116,15 +117,35 @@ const Checkout = () => {
                                     <input 
                                         type="tel" 
                                         className="form-control" 
-                                        placeholder="Insertar Nro Telefono" 
+                                        placeholder="Ingresa tú nro. de telefono" 
                                         name="telefono" 
                                         id="telefono" 
                                         value={formData.telefono}
                                         onChange={handleChangeInput}
                                         required/>
                                 </div>
-                                <p className="medioPago"> Seleccionar Forma de Pago </p>
+                                <p className="medioPago"> Seleccionar tú forma de pago: </p>
                                 <div>
+                                    <div className="form-check">
+                                        <label className="form-check-label">
+                                            <input 
+                                            type="radio" 
+                                            name="medioPago" 
+                                            id="cred" 
+                                            className="form-check-input mr-2" 
+                                            required/> Tarjeta de Crédito
+                                        </label>
+                                    </div>
+                                    <div className="form-check">
+                                        <label className="form-check-label">
+                                            <input 
+                                                type="radio" 
+                                                name="medioPago" 
+                                                id="transf" 
+                                                className="form-check-input mr-2" 
+                                                required/> Tarjeta de Débito
+                                        </label>
+                                    </div>
                                     <div className="form-check">
                                         <label className="form-check-label">
                                             <input 
@@ -135,25 +156,15 @@ const Checkout = () => {
                                                 required/> Transferencia Bancaria
                                         </label>
                                     </div>
-                                    <div className="form-check">
-                                        <label className="form-check-label">
-                                            <input 
-                                            type="radio" 
-                                            name="medioPago" 
-                                            id="cred" 
-                                            className="form-check-input mr-2" 
-                                            required/> Tarjeta de Credito
-                                        </label>
-                                    </div>
                                 </div>
-                                <Link 
+                                <input 
                                 type="submit" 
                                 to="/Thankyou"
-                                disabled={[formData.nombre, formData.apellido, formData.email, formData.telefono].includes('')}
+                                disabled={[formData.nombre, formData.apellido, formData.email, formData.telefono].includes("")}
                                 onClick={handleFinishPurchase}
                                 class="btn btn-success btn-lg mt-3" 
                                 id="enviar" 
-                                value="Enviar">ENVIAR</Link>
+                                value="Enviar"/>
                             </form>
                         </div>
                     </div>

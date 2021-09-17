@@ -204,6 +204,12 @@
         font-weight: bold;
         color: rgb(66, 87, 117);
     }
+    .cart-summary_valueDesc {
+        margin-bottom: 0;
+        font-size: large;
+        font-weight: bold;
+        color: rgb(148, 59, 37);
+    }
     .cart-summary_finish {
         background-color: #f38e0d;
         color: white;
@@ -212,6 +218,10 @@
         border-radius: 5px;
         padding: 0.5rem;
         text-decoration: none;
+    }
+    .cart-summary_discount {
+        color: #39acdf;
+        text-align: center,
     }
 }
 

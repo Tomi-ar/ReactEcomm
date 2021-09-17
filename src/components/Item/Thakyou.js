@@ -16,7 +16,7 @@ export const Thankyou = () => {
             <div className="altMin text-center">
                 <h1 className="titlePpal mt-3">Muchas gracias por tu compra!</h1>
                 <p className="mt-5">Tu código de compra es el siguiente: <span>{id}.</span></p>
-                <p>Usalo para rastrear tu pedido!</p>
+                <p>Úsalo para rastrear tu pedido!</p>
                 <button className="col-6 volverHome mt-5"><Link className="boton_link" to="/" >Volver al Home</Link></button>
             </div>
             <Footer />
