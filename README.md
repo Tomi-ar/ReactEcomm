@@ -1,5 +1,7 @@
 # Buenas Birras e-commerce con React!
 En esta página podrás encontrar una selección de cervezas artesanales de las mejores cervecerías de la región!
+Explicación del sitio: 
+https://www.loom.com/share/4ce52eff795646a8a1676d09958b12d3
 
 # BUILD WITH
 
