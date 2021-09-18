@@ -74,7 +74,7 @@ const Checkout = () => {
                 <h1 className="titlePpal">Finaliza tu compra</h1>
                 <div className="container altMin">
                     <div className="row mt-3 justify-content-center text-center">
-                        <div className="col-6">
+                        <div className="col-12 col-md-6">
                             <form className="formulario">
                                 <div className="form-group">
                                     <label for="nombre">Nombre</label>

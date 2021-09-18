@@ -33,10 +33,10 @@ function ItemDetail (item){
 
     return (
         <div className="row itemDetail my-5">
-            <div className="col-6 itemDetail_img min-vh-80 m-auto">
+            <div className="col-12 col-md-6 itemDetail_img min-vh-80 m-auto">
                 <img src={item.imagenURL} alt="Imagen producto"/>
             </div>
-            <div className="col-6 itemDetail_info my-auto min-vh-80">
+            <div className="col-12 col-md-6 itemDetail_info my-auto min-vh-80">
                 <h3 className="cardTitle">{item.nombre}</h3>
                 <h4 className="cardProductor">{item.productor}</h4>
                 <p className="cardDescripcion">{item.descripcion}</p>

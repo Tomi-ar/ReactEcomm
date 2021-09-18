@@ -83,7 +83,7 @@ const Cart = () => {
             <NavBar />
             <div className="container my-5">
                 <div className="row ">
-                    <div className="col-7">
+                    <div className="col-12 col-md-7">
                         <h3 className="cart-title">Mi carrito</h3>
                         <div className="product-item border">
                             {cartSize(items) > 0 ? (
@@ -92,14 +92,14 @@ const Cart = () => {
                                 <div key={prod.id} className="border product-item-details mx-1 my-3">
                                     <div>
                                         <div className="row pt-2">
-                                            <div className="col-1 offset-1 product-details__img text-center">
+                                            <div className="col-1 product-details__img text-center">
                                                 <img src={prod.item.imagenURL} alt="foto del prod" className="ml-0 d-block" />
                                             </div>
-                                            <div className="col-6">
+                                            <div className="col-6 offset-1">
                                                 <h4>{prod.item.nombre}</h4>
                                                 <p className="detail-subt">{prod.item.productor}</p>
                                             </div>
-                                            <div className="col-2 offset-1 text-center">
+                                            <div className="col-2 offset-sm-1 text-center">
                                                 <button id="carrito" type="button" className="btn btn-light rounded-circle">
                                                     <img onClick={()=> vaciarItem(prod.item.id)} src="https://assets.webiconspng.com/uploads/2017/01/Red-Trash-Simple-Icon.png" alt="eliminar" className="rounded-pill border border-dark" width="30"/>
                                                 </button>
@@ -137,7 +137,7 @@ const Cart = () => {
                         </div>               
                     </div>
 
-                    <div className="col-4 offset-1 cart-summary">
+                    <div className="col-12 col-md-4 offset-md-1 mt-5 mt-md-0 cart-summary">
                     <h3 className="cart-title">Resumen de compra</h3>
                         <div className="border">
                             <div className="cart-summary_style">
@@ -158,7 +158,7 @@ const Cart = () => {
                                 </div>
                              </>) : (<> </>)}
                             <div className="my-3">
-                                <Link to="/checkout" className="col-6 offset-3 cart-summary_finish">Terminar Compra</Link>
+                                <Link to="/checkout" className="col-4 offset-4 col-md-8 offset-md-2 col-lg-6 offset-lg-3 cart-summary_finish">Terminar Compra</Link>
                             </div>
 
                         </div>

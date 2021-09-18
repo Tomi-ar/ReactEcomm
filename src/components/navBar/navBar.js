@@ -15,8 +15,7 @@ export const NavBar = () => {
                             <NavLink to="/" activeClassName="activeRoute">
                                 <img
                                 src={Logo}
-                                width="100"
-                                className="d-inline-block align-top"
+                                className="d-inline-block align-top estiloLogo_img"
                                 alt=""
                             /></NavLink>
                         </Navbar.Brand>
@@ -41,8 +40,6 @@ export const NavBar = () => {
                                         <img 
                                             src={Carrito} 
                                             alt="carrito" 
-                                            width="60"
-                                            height="60"
                                             className="border-dark carrito-img"
                                         />
                             </Button>

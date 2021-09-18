@@ -8,14 +8,15 @@ En esta página podrás encontrar una selección de cervezas artesanales de las 
     Node
     NPM
     Webpack
+    Firebase 
+    SweetAlert2
+    CurrencyFormat
     HTML
     CSS
     BOOTSTRAP
 
-
 # HOME
-El home carga una lista de productos desde un .json con el catalogo, con una demora de 2 segundos para simular un tiempo de carga de datos asíncrono. 
-El navbar esta compuesto del logo del site que lleva hacia la página inicial en cualquier momento.
+El home carga una lista de productos usando Firebase como base de datos. El navbar esta compuesto del logo del site que lleva hacia la página inicial en cualquier momento.
 Tenemos un link de Productores que agrupa cada uno de los productores disponibles hoy en el site. Cada uno lleva a la lista de productos de cada uno de ellos.
 Tenemos un link de FAQs que todavía está en construcción.
 Por úlitmo, una imagen del carrito para poder visualizar (en un futuro) los productos del mismo.
@@ -24,8 +25,15 @@ Por úlitmo, una imagen del carrito para poder visualizar (en un futuro) los pro
 Cada uno de estos está hecho haciendo un filtro del listado de productos inicial, de acuerdo al nombre seleccionado (tomado usando useParams)
 
 # DETALLES DEL PRODUCTORES
-También se puede acceder al detalle de cada producto en una página nueva donde se pueden agregar (en un futuro) varios items del mismo producto al carrito!
+También se puede acceder al detalle de cada producto en una página nueva donde se pueden agregar varias unidades del mismo producto al carrito!
 
+# CARRITO
+Si no hay productos se introdujo un link para volver al home y seleccionar productos.
+A medida que se agregan productos se notifica al usuario usando alertas (sweetalert2). Cada producto se agrega abajo del anterior y se puede moficiar la cantidad dese ahí mismo. A la derecha se muestra el subtotal, descuentos y total a pagar. En caso de seleccionar más de 6 unidades de algun item se proporciona un descuento del 15%.
+Clickeando en Finalizar se abre la ultima parte de intereacción con el usuario para cargar el formulario de carga de datos.
+
+# CHECKOUT
+Se capturan los datos del cliente y se proporciona el ID de la orden creada en Firebase - guardamos nombre, apellido, email, telefono, forma de pago y detalles de los productos (items y valor total).
 
 # Getting Started with Create React App
 

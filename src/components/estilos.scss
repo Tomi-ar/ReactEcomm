@@ -3,12 +3,19 @@
 }
 
 .estiloLogo {
-    background: #fff
+    background: #fff;
+    .estiloLogo_img {
+        width: 100px;
+    }
 }
 
 .estiloCarrito {
     background: #fff;
     border-radius: 120px;
+    img {
+        width: 60px;
+        height: 60px;
+    }
 }
 
 .navLinks {
@@ -53,6 +60,14 @@
 
 .altMin {
     min-height: 100vh;
+}
+
+.item_card {
+    width: 14rem;
+    .item_card_img {
+        width: 222px;
+        height: 222px;
+    }
 }
 
 .itemDetail {
@@ -149,6 +164,7 @@
             color: #999;
         }
         .product-details__img {
+            padding-left: 2rem;
             img {
                 width: auto;
                 height: 60px;
@@ -249,4 +265,32 @@ p {
     span {
         font-weight: bold;
     }
+}
+
+@media all and (max-width: 576px) {
+    .item_card {
+        width: 10rem;
+        .item_card_img {
+            width: 150px;
+            height: 150px;
+        }
+    }
+    .estiloLogo_img {
+        width: 50px;
+    }
+    .estiloCarrito img {
+        width: 40px;
+        height: 40px;
+    }
+    .navLinks {
+        margin-right: 0.25rem;
+    }
+    .detail-subt {
+        font-size: small;
+    }
+    .cartWidget {
+        font-size: small;
+        margin-left: -20px;
+    }
+    //  cambiar el item_card para unos 12rem, item_card_img para menos pix, 
 }
