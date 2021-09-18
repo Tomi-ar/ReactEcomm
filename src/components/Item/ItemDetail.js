@@ -51,10 +51,6 @@ function ItemDetail (item){
                     <Terminar q={cantidadAgregar} item={item} onAgregar={onAgregar}/> </Link> 
                     </> :
                     <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />}
-                {/* <ItemCount max={item.max} cantidad={item.cantidad} onAdd={onAdd} />
-                {cantidadAgregar >0 && showButton && <Link to="/cart" > 
-                <Terminar q={cantidadAgregar} item={item} onAgregar={onAgregar}/> </Link>
-                } */}
                 </div>
             </div>
         </div>

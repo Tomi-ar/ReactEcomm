@@ -3,7 +3,6 @@ import Logo from '../images/Logo.png';
 import Face from '../images/facebook.PNG';
 import Insta from '../images/instagram.png';
 import Tw from '../images/twitter.PNG';
-import '../estilos.css'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {

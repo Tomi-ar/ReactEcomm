@@ -53,7 +53,6 @@ export const CartProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        // console.log('items', items)
     }, [items])
 
     return (

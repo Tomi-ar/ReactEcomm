@@ -15,7 +15,6 @@ const Cart = () => {
     const descuentos = items.filter(({q}) => q >= 6).reduce((a, b) => a + b.item.precio*0.15*b.q, 0);
     const total = subtotal - descuentos;
     
-    // PARA REMOVER MAS TARDE
     console.log('items', items);
     console.log('cantidad', cartSize(items))
     console.log('descuento', descuentos);
@@ -64,19 +63,6 @@ const Cart = () => {
             }
         })
     }
-
-    // const handleFinishPurchase = (e) => {
-
-        // UNA FORMA GENERAL
-    //     const docRef = db.collection('items').doc(items.[0].item.id)
-    //     orders.add(newOrder).then((resopnse) => {
-    //         console.log(response);
-    //         docRef.update({
-    //            stock: items[0].item.stock - items[0].quantity; SE TENDRIA QUE HACER EN EL MOMENTO QUE SE CREA LA OTRA INFORMACION
-    // })
-    //     }).catch((error) => console.log(error)); 
-    //     }
-    // }
 
     return(
         <div>
@@ -158,7 +144,7 @@ const Cart = () => {
                                 </div>
                              </>) : (<> </>)}
                             <div className="my-3">
-                                <Link to="/checkout" className="col-4 offset-4 col-md-8 offset-md-2 col-lg-6 offset-lg-3 cart-summary_finish">Terminar Compra</Link>
+                                <Link to="/checkout" className="col-4 offset-4 col-md-8 offset-md-2 col-lg-6 offset-lg-4 cart-summary_finish">Terminar Compra</Link>
                             </div>
 
                         </div>

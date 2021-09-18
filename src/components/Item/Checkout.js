@@ -15,7 +15,7 @@ const Checkout = () => {
     const saveHistory = (id) => history.push(`/thankyou/${id}`);
 
     const subtotal = items.reduce((a,b) => a + b.item.precio*b.q, 0);
-    const descuentos = 0;
+    const descuentos = items.filter(({q}) => q >= 6).reduce((a, b) => a + b.item.precio*0.15*b.q, 0);
     const total = subtotal - descuentos;
 
     const [formData, setFormData] = useState({
@@ -60,7 +60,6 @@ const Checkout = () => {
             });
             batch.commit();
             saveHistory(response.id);
-            // swall success con timer de procesamiento de la orden
         })
         .catch((error) => console.log('error', error));
         

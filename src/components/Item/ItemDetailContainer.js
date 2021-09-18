@@ -5,20 +5,13 @@ import NavBar from '../navBar/navBar';
 import ItemDetail from './ItemDetail';
 import { getFirestore } from "../firebase";
 import '../estilos.scss';
-// import ListProducts from './productos.json'
-
 
 function ItemDetailContainer() {
     const {id} = useParams();
     const [items, setItems] = useState({});
     const [loading, setLoading] = useState(false);
 
-    // const getItems = (ab) => {
-    //     const selected = ListProducts.find( (producto) => producto.id === ab)
-    //     setItems(selected);
-
     useEffect( () => {
-            // getItems(id);
         setLoading(true);
         const db = getFirestore();
         const itemCollection = db.collection("Items");
